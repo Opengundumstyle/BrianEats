@@ -4,7 +4,7 @@ project name: BrianEats
 Background:
 
 This project is taken from the inspiration of yelp recommendation system where a api is being used to satisfied foodies's
-needs on where and what they want to eat. But with a minor twist. Instead of giving you the headache of where and what to eat, BrianEats handles all that with a single click, we find the desinated place with our advance cutting-edge reccomendation algorithmn base on your current mood and tendency on certain food flavor. Are you ready to join us on the food quest? 
+needs on where and what they want to eat. But with a minor twist. Instead of giving you the headache of where and what to eat, BrianEats handles all that with a single click, we find the designated place with our advance cutting-edge  algorithmn base on your current mood and tendency on food flavor. Are you ready to join us on this amazing food quest? 
 
 
 # Functionality & MVPs
