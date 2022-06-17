@@ -1,10 +1,10 @@
 # aa_javascript_project
-project name: BrianMap
+project name: BrianEats
 
 Background:
 
 This project is taken from the inspiration of yelp recommendation system where a api is being used to satisfied foodies's
-needs on where and what they want to eat. But with a minor twist. Instead of bringing you the headache of where and what to eat, BrianMap handles all that with a single click, we find the desinated place with our advance cutting-edge reccomendation algorithmn base on your current mood and tendency on certain food flavor. Are you ready to join us on the journey of this unknown food quest? 
+needs on where and what they want to eat. But with a minor twist. Instead of bringing you the headache of where and what to eat, BrianEats handles all that with a single click, we find the desinated place with our advance cutting-edge reccomendation algorithmn base on your current mood and tendency on certain food flavor. Are you ready to join us on the food quest? 
 
 
 Functionality & MVPs
