@@ -3,13 +3,20 @@ import calcRoute from './calcRoute.js'
 
 
 
-function findGeo(map,infoWindow,directionsService,directionsRenderer){
+function findGeo(map,infoWindow,directionsService,directionsRenderer,data){
         
-    
-      let destination = new google.maps.LatLng(37.7683909618184, -122.51089453697205); // final position
+   
 
       directionsRenderer.setMap(map); // object that set route when fullfilled request
-
+      
+    
+      let bIdx = Math.floor(Math.random() * 20);
+      
+      const destination = {
+        lat: data.businesses[bIdx].coordinates.latitude,
+        lng: data.businesses[bIdx].coordinates.longitude,
+      };
+            
               if(navigator.geolocation){
                     navigator.geolocation.getCurrentPosition(
                             (position) =>{
@@ -18,10 +25,10 @@ function findGeo(map,infoWindow,directionsService,directionsRenderer){
                                 lng: position.coords.longitude,
                               };
                     
-                              infoWindow.setPosition(pos);
-                              infoWindow.setContent("Location found.");
+                              infoWindow.setPosition(destination);
+                              infoWindow.setContent(`${data.businesses[bIdx].name}`);
                               infoWindow.open(map);
-                              map.setCenter(pos);
+                              map.setCenter(destination);
                               calcRoute(pos,destination,directionsService,directionsRenderer)
                             },
                             () => {

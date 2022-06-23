@@ -9,3 +9,120 @@ h1 {
      height: 700px;
      width: 100%;
 }
+
+body{
+   margin:0
+}
+
+p{
+    font-size: larger;
+
+}
+
+p {
+    position: relative;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 800;
+    color: royalblue;
+    overflow: hidden;
+    /* Same as before */
+    background: linear-gradient(to right, royalblue 50%, midnightblue 50%, midnightblue);
+    /* Same as before */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    /* Same as before */
+    transition: background-position 275ms ease;
+  }
+  p:hover {
+    background-position: 0 100%;
+  }
+
+
+.question{
+    align-items: center;
+    justify-content: center;
+}
+
+
+  
+// .hide{
+//   display: none;
+//   //  visibility: hidden;
+// }
+
+// .question:hover + .hide{
+//   display: block;
+//   // visibility: visible;
+//   color: green;
+//   font-size: 25px;
+// }
+
+// .loader {
+// display: inline-block;
+// width: 30px;
+// height: 30px;
+// position: relative;
+// border: 4px solid #Fff;
+// animation: loader 2s infinite ease;
+// }
+
+// .loader-wrapper{
+//   width:100%;
+//   height:100%;
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   background-color: #242F3F;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
+@keyframes loader {
+0% {
+  transform: rotate(0deg);
+}
+
+25% {
+  transform: rotate(180deg);
+}
+
+50% {
+  transform: rotate(180deg);
+}
+
+75% {
+  transform: rotate(360deg);
+}
+
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes loader-inner {
+0% {
+  height: 0%;
+}
+
+25% {
+  height: 0%;
+}
+
+50% {
+  height: 100%;
+}
+
+75% {
+  height: 100%;
+}
+
+100% {
+  height: 0%;
+}
+}
