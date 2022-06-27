@@ -5,7 +5,7 @@ import calcRoute from './calcRoute.js'
 
 function findGeo(map,infoWindow,directionsService,directionsRenderer,data){
         
-   
+     
 
       directionsRenderer.setMap(map); // object that set route when fullfilled request
       
@@ -16,6 +16,8 @@ function findGeo(map,infoWindow,directionsService,directionsRenderer,data){
         lat: data.businesses[bIdx].coordinates.latitude,
         lng: data.businesses[bIdx].coordinates.longitude,
       };
+
+  
             
               if(navigator.geolocation){
                     navigator.geolocation.getCurrentPosition(

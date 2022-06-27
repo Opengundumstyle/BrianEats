@@ -58,16 +58,18 @@ button:hover span:after {
 
  
   #hidden{
-    display: none;
-    top: 50%;
-    left: 35%;
-    position: absolute;
+    /* display: none; */
+    visibility: hidden;
+    /* top: 50%;
+    left: 35%; */
+    /* position: absolute; */
    
   }
   
   #container:hover ~ #hidden{
-    display: block;
-   
-    color: green;
-    font-size: 25px;
+    /* display: block; */
+    visibility: visible;
+    color: black;
+    font-size: 15px;
+    padding-top: 25px;
   }

@@ -1,6 +1,7 @@
-
+// import {hideSpinner} from "./scripts/loading.js"
 import findGeo from './scripts/geolocation.js'
 const BusinessLocation = require('./scripts/fetch.js');
+
 
 let map,infoWindow;
 
@@ -11,26 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // generate questions
 let userInterface = document.querySelector(".Interface")
-// let question = document.createElement("div")
-// let hidden = document.createElement("div")
-
-//     hidden.setAttribute("class","hide")
-//     question.setAttribute('class','question')
-
-//     let infotag = document.createElement('p')
-//     let innerText = document.createTextNode('just click a food category and we will do the work for you')
-
-//       infotag.appendChild(innerText)
-//       hidden.appendChild(infotag)
-//       userInterface.appendChild(hidden)
-   
-  
-//    let tag =  document.createElement('p')
-//    let text = document.createTextNode("What do you feel like eating today?") 
-
-//       tag.appendChild(text)
-//       question.appendChild(tag)
-//       userInterface.appendChild(question)
 
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
@@ -44,6 +25,8 @@ let userInterface = document.querySelector(".Interface")
          flavor.setAttribute('id', pereference)
          flavors.appendChild(flavor)
    }
+
+
 
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
@@ -80,16 +63,19 @@ let userInterface = document.querySelector(".Interface")
                                  
                                   let mapDisplay = document.getElementById('map')
                                   mapDisplay.style.display = "block"
-
-                                  
-                     
                                  let directionsService = new google.maps.DirectionsService();
                                  let directionsRenderer = new google.maps.DirectionsRenderer();
-                                   
+
+                                  directionsRenderer.setOptions({
+                                    polylineOptions:{
+                                        strokeColor: 'pink'
+                                    }
+                                 })
+                              
                                  console.log(data)
 
                                  findGeo(map,infoWindow,directionsService,directionsRenderer,data)
-
+                                 
                                  
                          }  
              }
@@ -99,7 +85,8 @@ let userInterface = document.querySelector(".Interface")
 
 function initMap(){ 
 
-  infoWindow = new google.maps.InfoWindow();
+  infoWindow = new google.maps.InfoWindow()
+
    map = new google.maps.Map(document.getElementById('map'),{
         center:{lat:37.799034800120424 ,lng: -122.40128762913366}, zoom:16
       }
