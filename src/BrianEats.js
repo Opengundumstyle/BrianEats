@@ -36,7 +36,9 @@ let userInterface = document.querySelector(".Interface")
                        
                         switch(event.target.id){
                               case 'spicy':
-                                 destination = BusinessLocation.getSpicy().then(data=>getlocation(data));
+                                 destination = BusinessLocation.getSpicy()
+                                  .then(data=>(getlocation(data)))
+                                 //  .then((directionsService,directionsRenderer)=>findGeo(map,infoWindow,directionsService,directionsRenderer,data));
                                  break;
                               case 'sweet':
                                  destination = BusinessLocation.getSweet().then(data=>getlocation(data));
@@ -55,26 +57,27 @@ let userInterface = document.querySelector(".Interface")
                                   break;
                          }
 
-                         console.log(destination)
+                         console.log('what is the before destination',destination)
 
                          function getlocation(data){
                          
                                   // If the fetch was successful, here we can manipulate the data we received
-                                 
+                                  console.log('what is the data here in brianeats',data)
+                                  
                                   let mapDisplay = document.getElementById('map')
-                                  mapDisplay.style.display = "block"
-                                 let directionsService = new google.maps.DirectionsService();
-                                 let directionsRenderer = new google.maps.DirectionsRenderer();
+                                    mapDisplay.style.display = "block"
+                                  let directionsService = new google.maps.DirectionsService();
+                                  console.log('conftim if directionService',directionsService)
+                                  let directionsRenderer = new google.maps.DirectionsRenderer();
 
                                   directionsRenderer.setOptions({
                                     polylineOptions:{
                                         strokeColor: 'pink'
                                     }
                                  })
-                              
-                                 console.log(data)
+                            console.log('what is the after destination',destination)
 
-                                 findGeo(map,infoWindow,directionsService,directionsRenderer,data)
+                            findGeo(map,infoWindow,directionsService,directionsRenderer,data)
                                  
                                  
                          }  

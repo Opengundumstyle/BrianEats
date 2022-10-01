@@ -8,17 +8,19 @@ function findGeo(map,infoWindow,directionsService,directionsRenderer,data){
      
 
       directionsRenderer.setMap(map); // object that set route when fullfilled request
-      
     
-      let bIdx = Math.floor(Math.random() * 20);
-      
-      const destination = {
-        lat: data.businesses[bIdx].coordinates.latitude,
-        lng: data.businesses[bIdx].coordinates.longitude,
-      };
+        let bIdx = Math.floor(Math.random() * 20);
+       
+         console.log('what is the data here in geolocation',data)
+         console.log('what is bIdx',bIdx)
+         console.log('what is data.businesses[bIdx]',data.businesses[bIdx])
+        
+         const destination = {
+            lat: data.businesses[bIdx].coordinates.latitude,
+            lng: data.businesses[bIdx].coordinates.longitude,
+          };
 
-  
-            
+
               if(navigator.geolocation){
                     navigator.geolocation.getCurrentPosition(
                             (position) =>{

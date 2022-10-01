@@ -5,9 +5,8 @@
 function calcRoute(position,destination,directionsService,directionsRenderer){
 
     // var selectedMode = document.getElementById('mode').value;
-    console.log("calRoute")
-    console.log(destination)
-    
+    console.log("calRoute",destination)
+   
     var request = {
         origin: position,
         destination: destination,
@@ -15,7 +14,7 @@ function calcRoute(position,destination,directionsService,directionsRenderer){
         travelMode: google.maps.TravelMode.WALKING
     };
      
-     console.log(request)
+     console.log('what is the request',request)
 
     directionsService.route(request, function(response, status) {
       if (status == 'OK') {
