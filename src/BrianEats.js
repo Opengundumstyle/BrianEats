@@ -1,6 +1,6 @@
 // import {hideSpinner} from "./scripts/loading.js"
 import findGeo from './scripts/geolocation.js'
-const BusinessLocation = require('./scripts/fetch.js');
+const BusinessLocation = require('./scripts/fetch.js').default;
 
 
 let map,infoWindow;

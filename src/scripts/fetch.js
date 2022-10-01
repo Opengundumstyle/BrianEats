@@ -55,13 +55,10 @@ getExpensive:async function(){
 
 
 // connect between frontend and backend server
-const apiRequest = (query) => {
-
-   return fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
-      .then(res => {
-           return res.json()
-              }
-           )
+const apiRequest = async (query) => {
+   console.log('what is the query',query)
+   const res = await fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
+  return await res.json()
   }
      
 
@@ -70,6 +67,6 @@ window.apiRequest = apiRequest
 
 
 
-module.exports = BusinessLocation;
+export default BusinessLocation;
 
  
