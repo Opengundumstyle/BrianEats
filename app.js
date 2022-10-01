@@ -35,7 +35,7 @@ app.listen(PORT, () => {
     fetch(url,{
         headers: { 
                     'Access-Control-Allow-Origin':'*',
-                    'Authorization': apiKey,
+                    'Authorization': "Bearer" + apiKey,
                     'Content-Type': 'application/json'
                 },
                 method:'GET',
