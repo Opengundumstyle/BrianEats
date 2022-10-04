@@ -1,12 +1,10 @@
 
-
-
-
 function calcRoute(position,destination,directionsService,directionsRenderer){
 
     // var selectedMode = document.getElementById('mode').value;
     console.log("calRoute",destination)
-   
+    console.log("location in calRoute",position)
+
     var request = {
         origin: position,
         destination: destination,
@@ -15,11 +13,12 @@ function calcRoute(position,destination,directionsService,directionsRenderer){
     };
      
      console.log('what is the request',request)
+     console.log('what is my original position',position)
 
     directionsService.route(request, function(response, status) {
       if (status == 'OK') {
-        directionsRenderer.setDirections(response);
-      }
+          directionsRenderer.setDirections(response);
+        }
     });
     
 }

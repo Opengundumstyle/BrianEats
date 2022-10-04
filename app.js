@@ -23,15 +23,19 @@ app.listen(PORT, () => {
 });
   
 // get api 
-
+  
   app.get('/api', (request, response) => {
     const urlStart = 'https://api.yelp.com/v3';
     const apiKey = process.env.YELP_API_KEY; // from .env (dev) or Heroku
+    // const searchTerm = request.query[0].searchTerm; // from query string
     const searchTerm = request.query.searchTerm; // from query string
+    // const lat = request.query[1].searchTerm;
+    // const lng = request.query[2].searchTerm;
     const url = `${urlStart}/businesses/search?categories=${searchTerm}&location=SF&limit=20`;
-    
-    console.log(`Fetching: ${url}`);
-  
+    // console.log('what is seachterm in app.js',searchTerm)
+    // const url = `${urlStart}/businesses/search?categories=${searchTerm}&latitude=${lat}
+    //              &longitude=${lng}&radius=5000&limit=20`;
+    // console.log(`Fetching: ${url}`);  
     fetch(url,{
         headers: { 
                     'Access-Control-Allow-Origin':'*',
@@ -46,5 +50,6 @@ app.listen(PORT, () => {
       .catch(error => response.send(error));
   });
 
+  
 
   

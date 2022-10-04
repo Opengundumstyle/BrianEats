@@ -13,10 +13,10 @@ const BusinessLocation = {
   return response
  },
 
-getSpicy:async function(){
+getSpicy:async function(lat,lng){
        
-  const response = await apiRequest('herbsandspices, All')
-
+  const response = await apiRequest(['herbsandspices, All',lat,lng])
+  
   return response
 },
 
@@ -42,25 +42,20 @@ getHealthy: async function(){
 
 getExpensive:async function(){
   const response = await apiRequest('Food Trucks')
-
+  
   return response
  },
-
-
-
 }
-
-  
-
 
 
 // connect between frontend and backend server
 const apiRequest = async (query) => {
-   console.log('what is the query',query)
-   const res = await fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
-  return await res.json()
+   console.log('what query in apiRequest',query[0])
+   console.log('what lat lng in apiRequest',query[1])
+   const res = await fetch(`/api?searchTerm=${encodeURIComponent(query[0])}`)
+   return await res.json()
   }
-     
+
 
 // window.corsRequest = corsRequest
 window.apiRequest = apiRequest
