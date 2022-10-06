@@ -30,12 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
              if(event.target.classList.contains('flavor')){
                         switch(event.target.id){
                                case 'spicy':
-                                 //  let latitude,longitude;
-                                 //   navigator.geolocation.getCurrentPosition(position => {
-                                 //        latitude = position.coords.latitude;  
-                                 //        longitude = position.coords.longitude;
-                                 //        BusinessLocation.getSpicy(latitude,longitude).then((data)=>getlocation(data,latitude,longitude))
-                                 //  })
+                                  let latitude,longitude;
+                                   navigator.geolocation.getCurrentPosition(position => {
+                                        latitude = position.coords.latitude;  
+                                        longitude = position.coords.longitude;
+                                        BusinessLocation.getSpicy(latitude,longitude)
+                                        .then((data)=>getlocation(data,latitude,longitude))
+                                  })
                                     destination = BusinessLocation.getSpicy().then(data=>getlocation(data));
                                  break;
                                  case 'sweet':

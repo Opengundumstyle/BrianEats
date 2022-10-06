@@ -29,9 +29,14 @@ app.listen(PORT, () => {
     const apiKey = process.env.YELP_API_KEY; // from .env (dev) or Heroku
     // const searchTerm = request.query[0].searchTerm; // from query string
     const searchTerm = request.query.searchTerm; // from query string
+    let searchArr = searchTerm.split('&')
+    const searchTerm1 = searchArr[0]
+    const searchTerm2 = searchArr[1]
+    const searchTerm3 = searchArr[2]
     // const lat = request.query[1].searchTerm;
     // const lng = request.query[2].searchTerm;
-    const url = `${urlStart}/businesses/search?categories=${searchTerm}&location=SF&limit=20`;
+    // const url = `${urlStart}/businesses/search?categories=${searchTerm}&location=SF&limit=20`;
+    const url = `${urlStart}/businesses/search?categories=${searchTerm1}&latitude=${searchTerm2}&longitude=${searchTerm3}&radius=10000&limit=20`;
     // console.log('what is seachterm in app.js',searchTerm)
     // const url = `${urlStart}/businesses/search?categories=${searchTerm}&latitude=${lat}
     //              &longitude=${lng}&radius=5000&limit=20`;

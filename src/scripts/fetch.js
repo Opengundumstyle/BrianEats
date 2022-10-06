@@ -15,7 +15,8 @@ const BusinessLocation = {
 
 getSpicy:async function(lat,lng){
        
-  const response = await apiRequest(['herbsandspices, All',lat,lng])
+  // const response = await apiRequest(['herbsandspices, All',lat,lng])
+  const response = await apiRequest(`herbsandspices, All&${lat}&${lng}`)
   
   return response
 },
@@ -50,9 +51,11 @@ getExpensive:async function(){
 
 // connect between frontend and backend server
 const apiRequest = async (query) => {
-   console.log('what query in apiRequest',query[0])
-   console.log('what lat lng in apiRequest',query[1])
-   const res = await fetch(`/api?searchTerm=${encodeURIComponent(query[0])}`)
+  //  console.log('what query in apiRequest',query[0])
+  //  console.log('what lat lng in apiRequest',query[1])
+  //  const res = await fetch(`/api?searchTerm=${encodeURIComponent(query[0])}`)
+   console.log('what is query at fetch',query)
+   const res = await fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
    return await res.json()
   }
 
