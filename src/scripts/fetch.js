@@ -5,10 +5,10 @@
 const BusinessLocation = {
 
 
- getSweet :async function(){
+ getSweet :async function(lat,lng){
 
   //  showSpinner()
-  const response = await apiRequest('desserts, All')
+  const response = await apiRequest(`desserts, All&${lat}&${lng}`)
     
   return response
  },
@@ -16,33 +16,33 @@ const BusinessLocation = {
 getSpicy:async function(lat,lng){
        
   // const response = await apiRequest(['herbsandspices, All',lat,lng])
-  const response = await apiRequest(`herbsandspices, All&${lat}&${lng}`)
+  const response = await apiRequest(`szechuan, All&${lat}&${lng}`)
   
   return response
 },
 
-getFresh: async function(){
-  const response = await apiRequest('seafoodmarkets, All')
+getFresh: async function(lat,lng){
+  const response = await apiRequest(`seafoodmarkets, All&${lat}&${lng}`)
     
   return response
 },   
 
 
-getBoba:async function(){
-    const response = await apiRequest('bubbletea, [CA]')
+getBoba:async function(lat,lng){
+    const response = await apiRequest(`bubbletea, [CA]&${lat}&${lng}`)
 
     return response
 },
    
 
-getHealthy: async function(){
-  const response = await apiRequest('acaibowls')
+getHealthy: async function(lat,lng){
+  const response = await apiRequest(`acaibowls&${lat}&${lng}`)
 
   return response
 },
 
-getExpensive:async function(){
-  const response = await apiRequest('Food Trucks')
+getExpensive:async function(lat,lng){
+  const response = await apiRequest(`restaurants&${lat}&${lng}`)
   
   return response
  },
@@ -51,9 +51,7 @@ getExpensive:async function(){
 
 // connect between frontend and backend server
 const apiRequest = async (query) => {
-  //  console.log('what query in apiRequest',query[0])
-  //  console.log('what lat lng in apiRequest',query[1])
-  //  const res = await fetch(`/api?searchTerm=${encodeURIComponent(query[0])}`)
+  
    console.log('what is query at fetch',query)
    const res = await fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
    return await res.json()

@@ -26,33 +26,63 @@ document.addEventListener("DOMContentLoaded", () => {
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
 
-            let destination;
-             if(event.target.classList.contains('flavor')){
-                        switch(event.target.id){
-                               case 'spicy':
-                                  let latitude,longitude;
-                                   navigator.geolocation.getCurrentPosition(position => {
+           
+            if(event.target.classList.contains('flavor')){
+               switch(event.target.id){
+                              case 'spicy':
+                                 navigator.geolocation.getCurrentPosition(position => {
+                                       let latitude,longitude;
                                         latitude = position.coords.latitude;  
                                         longitude = position.coords.longitude;
                                         BusinessLocation.getSpicy(latitude,longitude)
                                         .then((data)=>getlocation(data,latitude,longitude))
                                   })
-                                    destination = BusinessLocation.getSpicy().then(data=>getlocation(data));
                                  break;
                                  case 'sweet':
-                                    destination = BusinessLocation.getSweet().then(data=>getlocation(data));
+                                    navigator.geolocation.getCurrentPosition(position => {
+                                         let latitude,longitude;
+                                         latitude = position.coords.latitude;  
+                                         longitude = position.coords.longitude;
+                                         BusinessLocation.getSweet(latitude,longitude)
+                                         .then((data)=>getlocation(data,latitude,longitude))
+                                   })
+                                  
                                     break;
                                  case 'boba':
-                                    destination = BusinessLocation.getBoba().then(data=>getlocation(data));
+                                    navigator.geolocation.getCurrentPosition(position => {
+                                       let latitude,longitude;
+                                       latitude = position.coords.latitude;  
+                                       longitude = position.coords.longitude;
+                                       BusinessLocation.getBoba(latitude,longitude)
+                                       .then((data)=>getlocation(data,latitude,longitude))
+                                 })
                                     break;
                                  case 'fresh':
-                                    destination = BusinessLocation.getFresh().then(data=>getlocation(data));
+                                    navigator.geolocation.getCurrentPosition(position => {
+                                       let latitude,longitude;
+                                       latitude = position.coords.latitude;  
+                                       longitude = position.coords.longitude;
+                                       BusinessLocation.getFresh(latitude,longitude)
+                                       .then((data)=>getlocation(data,latitude,longitude))
+                                 })
                                     break;
                                  case 'healthy':
-                                    destination = BusinessLocation.getHealthy().then(data=>getlocation(data));
+                                    navigator.geolocation.getCurrentPosition(position => {
+                                       let latitude,longitude;
+                                       latitude = position.coords.latitude;  
+                                       longitude = position.coords.longitude;
+                                       BusinessLocation.getHealthy(latitude,longitude)
+                                       .then((data)=>getlocation(data,latitude,longitude))
+                                 })
                                     break;
                                  case "expensive":
-                                    destination = BusinessLocation.getExpensive().then(data=>getlocation(data));
+                                    navigator.geolocation.getCurrentPosition(position => {
+                                       let latitude,longitude;
+                                       latitude = position.coords.latitude;  
+                                       longitude = position.coords.longitude;
+                                       BusinessLocation.getExpensive(latitude,longitude)
+                                       .then((data)=>getlocation(data,latitude,longitude))
+                                 })
                                  break;
                          }
                         
