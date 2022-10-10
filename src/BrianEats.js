@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
    document.getElementById("map").style.display = "none"
 
 // generate questions
-   let userInterface = document.querySelector(".Interface")
+   // let userInterface = document.querySelector(".Interface")
+   let introInterface =  document.querySelector(".start-page")
+   let userInterface = document.querySelector(".page2")
 
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
@@ -22,11 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
          flavor.setAttribute('id', pereference)
          flavors.appendChild(flavor)
    }
+    
+   document.getElementById('start-button').addEventListener('click', event =>{
+       if(event.target.id === 'start-button') 
+          {
+            userInterface.style.display='block'
+            introInterface.style.display = 'none'
+            }
+   })
 
+   
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
-
-           
             if(event.target.classList.contains('flavor')){
                switch(event.target.id){
                               case 'spicy':
@@ -100,13 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
                                      
                                   let directionsService = new google.maps.DirectionsService();
 
-                                  let directionsRenderer = new google.maps.DirectionsRenderer();
+                                  let directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
 
                                   directionsRenderer.setOptions({
                                     polylineOptions:{
                                         strokeColor: 'pink'
                                     }
-                                 })
+                                 })    
                      
                               findGeo(map,infoWindow,directionsService,directionsRenderer,data,latitude,longitude) 
                          }  
