@@ -132,10 +132,13 @@ document.addEventListener("DOMContentLoaded", () => {
                                   let directionsService = new google.maps.DirectionsService();
                                   
                                   let directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
+                                 
+
                                    
                                   directionsRenderer.setOptions({
                                     polylineOptions:{
-                                        strokeColor: 'pink'
+                                        strokeColor: 'pink',
+                                        strokeWeight: 10,
                                     }
                                  })    
       
