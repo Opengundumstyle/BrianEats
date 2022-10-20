@@ -1,9 +1,12 @@
 // import {hideSpinner} from "./scripts/loading.js"
+
+
+// import calcRoute from './scripts/calcRoute.js';
 import findGeo from './scripts/geolocation.js'
+
 const BusinessLocation = require('./scripts/fetch.js').default;
 let map,infoWindow;
-
-
+let routePath;
 document.addEventListener("DOMContentLoaded", () => {
 // hide map 
    document.getElementById("map").style.display = "none"
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
    document.getElementById('start-button').addEventListener('click', event =>{
        if(event.target.id === 'start-button') 
           {
-            userInterface.style.display='block'
+            userInterface.style.display = 'block'
             introInterface.style.display = 'none'
             }
    })
@@ -107,7 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                   document.getElementById('flavors').style.display ="none"
                                   document.getElementById('container').style.display ="none"
                                   let findNewPlace = document.createElement('button')
-                        
+                                  let homepage = document.createElement('button')
+                                  
                                   findNewPlace.innerHTML= `<div style="display:flex;flex-direction:row;gap:1rem;justify-content:space-between;">
                                                               <div>
                                                                 <i class="fa fa-refresh" aria-hidden="true"></i>
@@ -117,31 +121,56 @@ document.addEventListener("DOMContentLoaded", () => {
                                    
                                   findNewPlace.setAttribute('class','renewsearch')
                                   
+                                  homepage.innerHTML = `<div>
+                                                           home
+                                                       </div>`
+                                 
+                                  homepage.setAttribute('class','homepage-button')
+                                  
                                   userInterface.append(findNewPlace)
 
+                                  userInterface.append(homepage)
+                                 
                                   findNewPlace.addEventListener('click',()=>{
                                      findNewPlace.style.display = 'none'
-                                     directionsRenderer.setMap(null);
-                                     directionsRenderer = null;
+                                     homepage.style.display ='none'
+                                    //  directionsRenderer.setMap(null);
+                                    //  directionsRenderer = null;
+                                     routePath.setMap(null);
+                                    //  routePath = null;
+                                   
                                      markerD.setMap(null);
                                      markerD = null;
                                      getlocation(data,latitude,longitude,categoryName)
                                   })
                                  
+
+                                  homepage.addEventListener('click',()=>{
+
+                                    mapDisplay.style.display = "none"
+                                    findNewPlace.style.display = 'none'
+                                    homepage.style.display ='none'
+                                    routePath.setMap(null);
+                                    markerD.setMap(null);
+                                    markerD = null;
+                                    document.getElementById('flavors').style.display ="block"
+                                    document.getElementById('container').style.display ="block"
+
+                                  })
                                   
                                   let directionsService = new google.maps.DirectionsService();
-                                  
-                                  let directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
-                                 
+                                  let position= {
+                                      lat:latitude,
+                                      lng:longitude,
+                                  }
 
-                                   
-                                  directionsRenderer.setOptions({
-                                    polylineOptions:{
-                                        strokeColor: 'pink',
-                                        strokeWeight: 10,
-                                    }
-                                 })    
-      
+                                 // let directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
+                                 // let lineSymbol = {
+                                 //    path: google.maps.SymbolPath.CIRCLE,
+                                 //    fillOpacity:1,
+                                 //    scale:3
+                                 //   }
+
                                  let bIdx = Math.floor(Math.random() * data.businesses.length);
                                  let business = data.businesses[bIdx]
                                 
@@ -149,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     lat: data.businesses[bIdx].coordinates.latitude,
                                     lng: data.businesses[bIdx].coordinates.longitude,
                                   };
-                              
+                                
                                  
                                  let markerD = new google.maps.Marker({
                                     position:destination,
@@ -162,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     } ,
                                     optimized: false,
                                              })
-                             
+                                    
                                     markerD.addListener('mouseover',function(){
                                           infoWindow.open(map,this);
                                     })
@@ -170,8 +199,78 @@ document.addEventListener("DOMContentLoaded", () => {
                                     markerD.addListener('mouseout',function(){
                                        infoWindow.close();
                                     })
+
+                               
+
+                                    var request = {
+                                       origin: position,
+                                       destination: destination,
+                                       travelMode: google.maps.TravelMode.WALKING
+                                     };
+                                   
+
+                                    directionsService.route(request, function(response, status) {
+                                       if (status == 'OK') {
+
+                                             let lineSymbol = {
+                                                path: google.maps.SymbolPath.CIRCLE,
+                                                fillOpacity:1,
+                                                scale:3
+                                             }
                            
-                               findGeo(map,infoWindow,directionsService,directionsRenderer,business,latitude,longitude,destination,markerD) 
+                                           routePath = new google.maps.Polyline({
+                                                path:response.routes[0].overview_path,
+                                                geodesic: true,
+                                                strokeColor: 'pink',
+                                                icons: [{
+                                                   icon: lineSymbol,
+                                                   offset: '0',
+                                                   repeat: '10px'
+                                                }],
+                                            })
+                                          }
+                                          routePath.setMap(map);
+                                          animateLine(routePath);
+                                 });
+                              
+
+                                  function animateLine(line){
+
+                                    let count = 0;
+                                    let markSpeed;
+                                    let zoomLevel;
+                                    let multiPointer = 10;
+                                    
+                                    window.setInterval(function(){
+                                      
+                                      count = (count + 1) % 200;
+                                      let icons = line.get('icons');
+                                      icons[0].offset = (count/markSpeed) + '%';
+                                      line.set('icons',icons);
+
+                                      console.log('what is line',line)
+                                      let getZoom0 = line.get('map');
+                                      console.log('what is getZoom0 here',getZoom0)
+                                      let getZoom1 = getZoom0.getZoom();
+                                      
+                                      zoomLevel = getZoom1;
+                                      
+                                      if(zoomLevel >= 21){
+                                         markSpeed = multiPointer * zoomLevel / 0.2;
+                                      }else if(zoomLevel >=19){
+                                         markSpeed = multiPointer * zoomLevel / 0.5;
+                                      }else if(zoomLevel >=16){
+                                         markSpeed = multiPointer * zoomLevel / 2;
+                                      }else{
+                                        markSpeed = multiPointer * zoomLevel/ 20;
+                                      }
+                                    },100);
+                                    
+                                 }
+                                 
+                              
+                               findGeo(map,infoWindow,business,latitude,longitude,destination,markerD,routePath) 
+                              //  calcRoute(position,destination,directionsService,map,routePath)
 
                          }  
              }
@@ -183,7 +282,7 @@ function initMap(){
 
   infoWindow = new google.maps.InfoWindow()
 
-   map = new google.maps.Map(document.getElementById('map'),{
+  map = new google.maps.Map(document.getElementById('map'),{
         center:{lat:37.799034800120424 ,lng: -122.40128762913366}, zoom:16
       }
   );

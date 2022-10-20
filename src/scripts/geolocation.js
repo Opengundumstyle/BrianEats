@@ -1,11 +1,10 @@
 
 import calcRoute from './calcRoute.js'
+import { routePath } from '../BrianEats.js';
 
-function findGeo(map,infoWindow,directionsService,directionsRenderer,business,latitude,longitude,destination,markerD){
-        
-     
-    
-      directionsRenderer.setMap(map); // object that set route when fullfilled request
+function findGeo(map,infoWindow,business,latitude,longitude,destination,markerD){
+
+      // directionsRenderer.setMap(map); // object that set route when fullfilled request
 
         let pos = {lat:latitude,lng:longitude}
         let closetime = business.is_closed?'<div style="color:red;justify-content:flex-start;display:flex">Closed</>':'<div style="color:green; justify-content: flex-start;display:flex">Open</div>';
@@ -80,8 +79,7 @@ function findGeo(map,infoWindow,directionsService,directionsRenderer,business,la
             businessInfo.appendChild(img);
             mapdiv.append(businessInfo);
             map.setCenter(destination);
-            calcRoute(pos,destination,directionsService,directionsRenderer);
-
+            // calcRoute(pos,destination,directionsService,map,routePath);
           }
 
 export default findGeo;
