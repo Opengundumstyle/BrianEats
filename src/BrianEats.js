@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   
                                   homepage.innerHTML = `<div>
                                                            home
+                                                         
                                                        </div>`
                                  
                                   homepage.setAttribute('class','homepage-button')
