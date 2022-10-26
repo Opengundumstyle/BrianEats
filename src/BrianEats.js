@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
    for(let pereference of pereferences){
          let flavor = document.createElement('button')
          flavor.innerText = pereference
-         flavor.setAttribute('class','flavor')
+         // flavor.setAttribute('class','flavor')
          flavor.setAttribute('id', pereference)
+         flavor.classList.add('btn','btn--stripe')
          flavors.appendChild(flavor)
    }
     
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
-            if(event.target.classList.contains('flavor')){
+            if(event.target.classList.contains('btn')){
                switch(event.target.id){
                               case 'spicy':
                                  navigator.geolocation.getCurrentPosition(position => {
@@ -171,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                  //    fillOpacity:1,
                                  //    scale:3
                                  //   }
-
+             
                                  let bIdx = Math.floor(Math.random() * data.businesses.length);
                                  let business = data.businesses[bIdx]
                                 

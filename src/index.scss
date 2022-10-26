@@ -1,6 +1,7 @@
 @import './styles/mybutton.css';
 // @import "compass/css3";
 
+// main page title
 h1 {
     color:white;
     font-size: 100px;
@@ -8,6 +9,7 @@ h1 {
     margin-top: 0;
     padding-top:20px;
     padding-bottom: 20px;
+  
     span {
       display: inline-block;
       opacity: 0;
@@ -21,7 +23,6 @@ h1 {
       }
     }
 }
-
 
 @keyframes in {
   0% { 
@@ -40,7 +41,8 @@ h4 {
   font-size: 1.5rem;
   font-weight: 300;
   position: relative;
-  color: rgb(194, 193, 193);
+  color: rgb(160, 157, 157);
+
   @media only screen and (max-width: 1100px) {
     font-size: 2.2rem;
   }
@@ -66,9 +68,6 @@ h4 {
   }
 }
 
-
-
-
 #map{
     //  height: 700px;
      height:100%;
@@ -84,7 +83,6 @@ body{
 
 p{
     font-size: larger;
-
 }
 
 p {
@@ -199,7 +197,6 @@ animation: loader 2s infinite ease;
  
 // }
 
-
 .start-box{
   height: 300px;
   background-color: white;
@@ -213,16 +210,12 @@ animation: loader 2s infinite ease;
   color:rgb(95, 93, 93);
 }
 
-.start-button{
-  display: flex;
+ #start-button {
   align-content: center;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 140px;
-  border: 1px black solid;
-}
-
+  border: white 1px solid;
+ }
 
 .page2{
   display: none;
@@ -393,7 +386,7 @@ animation: loader 2s infinite ease;
     transition: opacity 350ms ease;
  
     color: #fff;
-    background: rgb(248, 218, 223);
+    background: pink;
     width: 97.5%;
     padding-left: 5px;
     text-align: center;
@@ -437,3 +430,65 @@ animation: loader 2s infinite ease;
    color: #282d34;
 }
 
+.fa{
+  font-size: 2rem;
+}
+
+ //page2 button animation
+
+$color-gray: #666;
+  $color-black: #000;
+  $stripe-height: 7px;
+  $btn-color: $color-gray;
+  $btn-background: #fff;
+  $btn-color-hover: #fff;
+  $btn-background-hover: $color-gray;
+  $border-color: $color-gray;
+  $border-color-hover: $color-black;
+
+
+
+@keyframes stripe-slide {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+.btn{
+    display: block;
+    transition: all .5s ease;
+
+    &--stripe {
+      overflow: hidden;
+      position: relative;
+       
+    &:after {
+          content: '';
+          display: block;
+          height: $stripe-height;
+          width: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-size: $stripe-height $stripe-height;
+        }
+      
+        &:hover {
+          background-color: $btn-background-hover;
+          color: $btn-color-hover;
+          border-color: $border-color-hover;
+
+          &:after {
+              background-image: repeating-linear-gradient(
+                  45deg,
+                  $btn-color-hover,
+                  $btn-color-hover 1px,
+                  transparent 2px,
+                  transparent 5px
+              );
+              border-top: 1px solid $border-color-hover;
+              animation: stripe-slide 12s infinite linear forwards;
+          }
+        }
+   }
+}

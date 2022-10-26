@@ -115,7 +115,7 @@ h4 {
   font-size: 1.5rem;
   font-weight: 300;
   position: relative;
-  color: rgb(194, 193, 193);
+  color: rgb(160, 157, 157);
 }
 @media only screen and (max-width: 1100px) {
   h4 {
@@ -266,14 +266,11 @@ p:hover {
   color: rgb(95, 93, 93);
 }
 
-.start-button {
-  display: flex;
+#start-button {
   align-content: center;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 140px;
-  border: 1px black solid;
+  border: white 1px solid;
 }
 
 .page2 {
@@ -441,7 +438,7 @@ p:hover {
   opacity: 0;
   transition: opacity 350ms ease;
   color: #fff;
-  background: rgb(248, 218, 223);
+  background: pink;
   width: 97.5%;
   padding-left: 5px;
   text-align: center;
@@ -485,4 +482,47 @@ p:hover {
 .bottom {
   font-size: 16.5px;
   color: #282d34;
+}
+
+.fa {
+  font-size: 2rem;
+}
+
+@keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.btn {
+  display: block;
+  transition: all 0.5s ease;
+}
+.btn--stripe {
+  overflow: hidden;
+  position: relative;
+}
+.btn--stripe:after {
+  content: "";
+  display: block;
+  height: 7px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 7px 7px;
+}
+.btn--stripe:hover {
+  background-color: #666;
+  color: #fff;
+  border-color: #000;
+}
+.btn--stripe:hover:after {
+  background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
+  border-top: 1px solid #000;
+  animation: stripe-slide 12s infinite linear forwards;
 }
