@@ -526,3 +526,10 @@ p:hover {
   border-top: 1px solid #000;
   animation: stripe-slide 12s infinite linear forwards;
 }
+
+.loading-wrapper span {
+  font-family: "Lato";
+  font-size: 20px;
+  letter-spacing: 12px;
+  color: #000;
+}

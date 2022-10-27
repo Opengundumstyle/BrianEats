@@ -1,10 +1,9 @@
 // import {hideSpinner} from "./scripts/loading.js"
-
-
 // import calcRoute from './scripts/calcRoute.js';
 import findGeo from './scripts/geolocation.js'
 
 const BusinessLocation = require('./scripts/fetch.js').default;
+
 let map,infoWindow;
 let routePath;
 document.addEventListener("DOMContentLoaded", () => {
@@ -202,8 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                        infoWindow.close();
                                     })
 
-                               
-
                                     var request = {
                                        origin: position,
                                        destination: destination,
@@ -269,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                     },100);
                                     
                                  }
-                                 
                               
                                findGeo(map,infoWindow,business,latitude,longitude,destination,markerD,routePath) 
                               //  calcRoute(position,destination,directionsService,map,routePath)

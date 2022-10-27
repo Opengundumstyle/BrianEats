@@ -492,3 +492,19 @@ $color-gray: #666;
         }
    }
 }
+
+.loading-wrapper{
+  //  display: none;
+  span{
+    // position: absolute;
+    // top:75px;
+    font-family: 'Lato';
+    font-size: 20px;
+    letter-spacing: 12px;
+    color: #000;
+    // color: #fff;
+    // left:15%;
+  }
+}
+
+
