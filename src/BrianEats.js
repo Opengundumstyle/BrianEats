@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // generate questions
    let introInterface =  document.querySelector(".start-page")
    let userInterface = document.querySelector(".page2")
-
+   let loadPage = document.querySelector(".loading-wrapper")
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
    let flavors = document.createElement('div')
@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
             if(event.target.classList.contains('btn')){
+            userInterface.style.display = 'none'
+            loadPage.style.display="block"
                switch(event.target.id){
                               case 'spicy':
                                  navigator.geolocation.getCurrentPosition(position => {
@@ -106,9 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                  //  console.log('this should not be markerD',markerD)
                                   let mapDisplay = document.getElementById('map')
                                       mapDisplay.style.display = "block"
-                                  
+                                  userInterface.style.display = 'block'
+                                  loadPage.style.display="none"
                                   document.getElementById('flavors').style.display ="none"
                                   document.getElementById('container').style.display ="none"
+
                                   let findNewPlace = document.createElement('button')
                                   let homepage = document.createElement('button')
                                   

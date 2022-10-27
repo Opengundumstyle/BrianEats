@@ -527,9 +527,111 @@ p:hover {
   animation: stripe-slide 12s infinite linear forwards;
 }
 
+.loading-wrapper {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+}
 .loading-wrapper span {
   font-family: "Lato";
   font-size: 20px;
   letter-spacing: 12px;
-  color: #000;
+  color: white;
+  top: 50%;
+  left: 35%;
+  position: absolute;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 40%;
+  transform-origin: 50%;
+  z-index: 2;
+  animation: circle 0.5s alternate infinite ease;
+}
+
+@keyframes circle {
+  0% {
+    top: 45%;
+    position: absolute;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 32%;
+  }
+}
+.circle:nth-child(2) {
+  left: 48%;
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  left: auto;
+  right: 43%;
+  animation-delay: 0.3s;
+}
+
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 45%;
+  transform-origin: 50%;
+  left: 40%;
+  filter: blur(1px);
+  animation: shadow 0.5s alternate infinite ease;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+.shadow:nth-child(4) {
+  left: 48%;
+  animation-delay: 0.2s;
+}
+
+.shadow:nth-child(5) {
+  left: auto;
+  right: 43%;
+  animation-delay: 0.3s;
+}
+
+.fadeinout {
+  animation: fadeinout 4s infinite;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
