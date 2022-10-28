@@ -10,15 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // hide map 
    document.getElementById("map").style.display = "none"
   
-// generate questions
+// declare html element variables 
    let introInterface =  document.querySelector(".start-page")
    let userInterface = document.querySelector(".page2")
    let loadPage = document.querySelector(".loading-wrapper")
+   let modal = document.getElementById("myModal");
+   let close = document.getElementsByClassName("close")[0];
+   let open = document.querySelector(".fa")
+   
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
    let flavors = document.createElement('div')
-      flavors.setAttribute('id','flavors')
+       flavors.setAttribute('id','flavors')
       userInterface.append(flavors)
+      
    for(let pereference of pereferences){
          let flavor = document.createElement('button')
          flavor.innerText = pereference
@@ -36,7 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
    })
 
-   
+      open.onclick = function() {
+         modal.style.display = "block";
+      }
+
+      close.onclick = function() {
+            modal.style.display = "none";
+         }
+
+      window.onclick = function(event) {
+            if (event.target == modal) {
+            modal.style.display = "none";
+            }
+         }
+      
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
             if(event.target.classList.contains('btn')){
@@ -102,20 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         
 
                          function getlocation(data,latitude,longitude,categoryName){
+                         
                                   // If the fetch was successful, here we can manipulate the data we received
                                   console.log('what is the data here in brianeats',data)
                                   let locationIcon = "https://active-storage-brain-eats.s3.us-west-1.amazonaws.com/destination.gif";
                                  //  console.log('this should not be markerD',markerD)
                                   let mapDisplay = document.getElementById('map')
                                       mapDisplay.style.display = "block"
-                                  userInterface.style.display = 'block'
+                                      userInterface.style.display = 'block'
                                   loadPage.style.display="none"
                                   document.getElementById('flavors').style.display ="none"
                                   document.getElementById('container').style.display ="none"
-
+                                 
                                   let findNewPlace = document.createElement('button')
                                   let homepage = document.createElement('button')
                                   
+                                
+
                                   findNewPlace.innerHTML= `<div style="display:flex;flex-direction:row;gap:1rem;justify-content:space-between;">
                                                               <div>
                                                                 <i class="fa fa-refresh" aria-hidden="true"></i>
@@ -127,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                   
                                   homepage.innerHTML = `<div>
                                                            home
-                                                         
                                                        </div>`
                                  
                                   homepage.setAttribute('class','homepage-button')

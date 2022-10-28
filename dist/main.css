@@ -187,6 +187,9 @@ p:hover {
 .question {
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .loader {
@@ -485,7 +488,12 @@ p:hover {
 }
 
 .fa {
+  cursor: pointer;
   font-size: 2rem;
+}
+
+.fa:hover {
+  color: pink;
 }
 
 @keyframes stripe-slide {
@@ -634,4 +642,52 @@ p:hover {
   100% {
     opacity: 0.2;
   }
+}
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  height: 25%;
+  font-size: 15px;
+  border-radius: 15px;
+  font-family: sans-serif;
+  border: pink 3px solid;
+}
+.modal-content div {
+  font-size: 20px;
+  margin-top: 65px;
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
