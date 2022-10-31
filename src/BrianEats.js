@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                      routePath.setMap(null);
                                     //  routePath = null;
       
+   
                                      markerD.setMap(null);
                                      markerD = null;
                                      getlocation(data,latitude,longitude,categoryName)
