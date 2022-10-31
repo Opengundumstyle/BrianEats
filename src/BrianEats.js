@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
      document.getElementById('flavors').addEventListener('click',event =>{
             if(event.target.classList.contains('btn')){
             userInterface.style.display = 'none'
+            open.style.display ='none'
             loadPage.style.display="block"
                switch(event.target.id){
                               case 'spicy':
@@ -163,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     //  directionsRenderer = null;
                                      routePath.setMap(null);
                                     //  routePath = null;
-                                   
+      
                                      markerD.setMap(null);
                                      markerD = null;
                                      getlocation(data,latitude,longitude,categoryName)
@@ -178,8 +179,13 @@ document.addEventListener("DOMContentLoaded", () => {
                                     routePath.setMap(null);
                                     markerD.setMap(null);
                                     markerD = null;
-                                    document.getElementById('flavors').style.display ="block"
+                                    userInterface.style.display = "block"
+                                    open.style.display ='block'
                                     document.getElementById('container').style.display ="block"
+                                    let flavorsButton = document.getElementById('flavors');
+                                    flavorsButton.style.display = 'block'
+                                    flavorsButton.classList.add('flavor-adjust')
+                                    
 
                                   })
                                   
