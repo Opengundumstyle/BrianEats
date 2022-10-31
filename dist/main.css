@@ -54,16 +54,14 @@ button:hover span:after {
       padding-bottom:40px;
       /* display: inline-flex; */
       display: flex;
+      margin-left: 40%;
+      position: absolute;
       flex-direction:column;
       justify-content:center;
       align-items:center;
     
   }
 
-  .flavor-adjust{
-    position: absolute;
-     margin-left: 40%;
-  }
  
   #hidden{
     /* display: none; */

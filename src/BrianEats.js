@@ -173,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                  
 
                                   homepage.addEventListener('click',()=>{
-
                                     mapDisplay.style.display = "none"
                                     findNewPlace.style.display = 'none'
                                     homepage.style.display ='none'
@@ -185,9 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     document.getElementById('container').style.display ="block"
                                     let flavorsButton = document.getElementById('flavors');
                                     flavorsButton.style.display = 'block'
-                                    flavorsButton.classList.add('flavor-adjust')
                                     
-
                                   })
                                   
                                   let directionsService = new google.maps.DirectionsService();
