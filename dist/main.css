@@ -54,9 +54,15 @@ button:hover span:after {
       padding-bottom:40px;
       display: inline-flex;
       flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      
+      /* justify-content:center;
+      align-items:center; */
+    
+      /* position: absolute; */
+  }
+
+  .adjust-button-pos{
+      position: absolute;
+      margin-left: 40%;
   }
 
  
@@ -79,7 +85,7 @@ button:hover span:after {
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-@charset "UTF-8";
+
 h1 {
   color: white;
   font-size: 100px;
