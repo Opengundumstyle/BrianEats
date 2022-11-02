@@ -677,3 +677,64 @@ $color-gray: #666;
   margin-left: 40%;
 }
 
+.social-icons {
+  top: 75%;
+  left: 39%;
+  position: absolute;
+  flex-direction: row;
+  gap: 4rem;
+  /* text pops up when icon is in hover state */
+  a span{
+    color:#666;
+    position:absolute;
+    font-family:sans-serif;
+    font-weight: 400;
+    bottom:0;
+    font-size:15px;
+  
+    border-radius:2px;
+    background:#fff;
+    visibility:hidden;
+    opacity:0;
+    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  }
+    a:hover span{
+      bottom:60px;
+      visibility: visible;
+      opacity:1;
+     
+    }
+}
+
+
+.social-icons a {
+  text-decoration: none;
+}
+.social-icons i {
+  font-size: 1.7rem;
+  color: rgb(197, 194, 194);
+  padding: 25px;
+}
+.social-icons i:hover {
+  color: pink;
+}
+
+.git{
+  left:17px;
+}
+
+.link{
+  left:87px;
+}
+
+.me{
+  left:167px;
+}
+
+.project{
+  left:237px;
+}

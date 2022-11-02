@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     document.getElementById('container').style.display ="block"
                                     let flavorsButton = document.getElementById('flavors');
                                     flavorsButton.style.display = 'block'
-                                    flavorsButton.classList.add('adjust-button-pos')
+                                    flavorsButton.classList.add('adjust-button-posxx`')
                                     
                                   })
                                   
