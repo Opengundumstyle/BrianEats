@@ -34,6 +34,10 @@ function findGeo(map,infoWindow,business,latitude,longitude,destination,markerD)
           // infoWindow.setPosition(destination);
           infoWindow.setPosition(markerPos);
 
+          if(business.price === undefined){
+                business.price = ''
+          }
+          
           infoWindow.setContent(` 
                                    <div><img src='${business.image_url}' width='280px' height='80px' style="object-fit:cover"></div >
                                    <div style="font-weight:bolder; font-size:15px;justify-content:flex-start;display:flex">${business.name}</div>

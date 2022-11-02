@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
    let loadPage = document.querySelector(".loading-wrapper")
    let modal = document.getElementById("myModal");
    let close = document.getElementsByClassName("close")[0];
-   let open = document.querySelector(".fa")
+   let open = document.querySelector(".fa-info-circle")
    
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     document.getElementById('container').style.display ="block"
                                     let flavorsButton = document.getElementById('flavors');
                                     flavorsButton.style.display = 'block'
-                                    flavorsButton.classList.add('adjust-button-posxx`')
+                                    flavorsButton.classList.add('adjust-button-pos')
                                     
                                   })
                                   
