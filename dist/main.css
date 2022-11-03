@@ -79,7 +79,7 @@ button:hover span:after {
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-/* @charset "UTF-8"; */
+@charset "UTF-8";
 h1 {
   color: white;
   font-size: 100px;
@@ -276,8 +276,22 @@ p:hover {
   border: white 1px solid;
 }
 
+#flavors {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .page2 {
   display: none;
+}
+
+.page2 .social-icons {
+  position: absolute;
+  top: 82%;
 }
 
 .info-rating-count {
@@ -676,6 +690,18 @@ p:hover {
   margin-left: 28px;
   margin-right: 28px;
 }
+.modal-content .upgrade-info-link {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: -180px;
+  font-size: 16px;
+  padding: 0;
+  color: #3eaae0;
+  text-decoration: none;
+}
+.modal-content .upgrade-info-link:hover {
+  text-decoration: underline;
+}
 
 /* The Close Button */
 .close {
@@ -694,7 +720,7 @@ p:hover {
 
 .adjust-button-pos {
   position: absolute;
-  margin-left: 40%;
+  margin-left: 45%;
 }
 
 .social-icons {
@@ -755,4 +781,23 @@ p:hover {
 
 .project {
   left: 237px;
+}
+
+.show-text {
+  z-index: 100;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 17px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.refresh-div:hover .show-text {
+  visibility: visible;
+}
+
+.homepage-button {
+  position: fixed;
+  top: 23px;
+  right: 25%;
 }

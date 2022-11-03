@@ -17,13 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
    let modal = document.getElementById("myModal");
    let close = document.getElementsByClassName("close")[0];
    let open = document.querySelector(".fa-info-circle")
-   
+   let socialIcons = document.querySelector('.social-icons')
+ 
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
    let flavors = document.createElement('div')
        flavors.setAttribute('id','flavors')
       userInterface.append(flavors)
-      
+   
    for(let pereference of pereferences){
          let flavor = document.createElement('button')
          flavor.innerText = pereference
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
          }
       
+ 
 // set trigger event which shows the direction 
      document.getElementById('flavors').addEventListener('click',event =>{
             if(event.target.classList.contains('btn')){
@@ -152,20 +154,25 @@ document.addEventListener("DOMContentLoaded", () => {
                                                        </div>`
                                  
                                   homepage.setAttribute('class','homepage-button')
+
+                                  const refreshdiv = document.querySelector('.refresh-div')
+                                  const hovertext = document.createElement('div')
+                                  hovertext.classList.add('show-text')
+                                  const textnode = document.createTextNode("don't really like it here? click the 🔄 button and we will find you a new place to eat")
+                                  hovertext.appendChild(textnode)
+                                  refreshdiv.appendChild(hovertext)
+                                  refreshdiv.appendChild(findNewPlace)
                                   
-                                  userInterface.append(findNewPlace)
+                                 
+                                 //  userInterface.append(findNewPlace)
 
                                   userInterface.append(homepage)
                                  
                                   findNewPlace.addEventListener('click',()=>{
                                      findNewPlace.style.display = 'none'
                                      homepage.style.display ='none'
-                                    //  directionsRenderer.setMap(null);
-                                    //  directionsRenderer = null;
+                                     textnode.nodeValue='';
                                      routePath.setMap(null);
-                                    //  routePath = null;
-      
-   
                                      markerD.setMap(null);
                                      markerD = null;
                                      getlocation(data,latitude,longitude,categoryName)
@@ -176,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     mapDisplay.style.display = "none"
                                     findNewPlace.style.display = 'none'
                                     homepage.style.display ='none'
+                                    textnode.nodeValue='';
                                     routePath.setMap(null);
                                     markerD.setMap(null);
                                     markerD = null;

@@ -191,15 +191,6 @@ animation: loader 2s infinite ease;
   }
 }
 
-// .start-page{
-//     position: absolute;
-//     margin-top: 0;
-//     height: 100%;
-//     background-color: pink;
-//     width: 100vw;
- 
-// }
-
 .start-box{
   height: 300px;
   background-color: white;
@@ -219,11 +210,23 @@ animation: loader 2s infinite ease;
   align-items: center;
   border: white 1px solid;
  }
+ #flavors{
+  padding-top:0;
+  padding-bottom:0;
+  display: inline-flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 
 .page2{
   display: none;
 }
 
+.page2 .social-icons{
+  position:absolute;
+  top:82%;
+}
 .info-rating-count{
   display: flex;
   flex-direction: row;
@@ -655,6 +658,18 @@ $color-gray: #666;
       margin-left: 28px;
       margin-right: 28px;
    }
+   .upgrade-info-link{
+      position: absolute;
+      margin-top: 50px;
+      margin-left: -180px;
+      font-size: 16px;
+      padding:0;
+      color:#3eaae0;
+      text-decoration: none;
+   }
+   .upgrade-info-link:hover{
+    text-decoration: underline;
+   }
 }
 
 /* The Close Button */
@@ -737,4 +752,24 @@ $color-gray: #666;
 
 .project{
   left:237px;
+}
+
+.show-text{
+  z-index:100;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255,0.7);
+  font-size: 17px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.refresh-div:hover .show-text{
+   visibility: visible;
+}
+
+
+.homepage-button{
+  position:fixed;
+  top:23px;
+  right:25%;
 }
