@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
    let modal = document.getElementById("myModal");
    let close = document.getElementsByClassName("close")[0];
    let open = document.querySelector(".fa-info-circle")
-   let socialIcons = document.querySelector('.social-icons')
+  
  
 // generate options
    let pereferences = ["spicy","sweet","boba","fresh","healthy","expensive"]
@@ -150,23 +150,27 @@ document.addEventListener("DOMContentLoaded", () => {
                                   findNewPlace.setAttribute('class','renewsearch')
                                   
                                   homepage.innerHTML = `<div>
-                                                           home
+                                                          BrianEats
                                                        </div>`
                                  
                                   homepage.setAttribute('class','homepage-button')
-
+                                 
+                                  const homediv = document.querySelector('.home-div')
+                                  const hometext = document.querySelector('.home-text')
                                   const refreshdiv = document.querySelector('.refresh-div')
                                   const hovertext = document.createElement('div')
                                   hovertext.classList.add('show-text')
                                   const textnode = document.createTextNode("don't really like it here? click the 🔄 button and we will find you a new place to eat")
+
+
                                   hovertext.appendChild(textnode)
                                   refreshdiv.appendChild(hovertext)
+                                  homediv.appendChild(hometext)
                                   refreshdiv.appendChild(findNewPlace)
-                                  
-                                 
+                                  homediv.appendChild(homepage)
                                  //  userInterface.append(findNewPlace)
 
-                                  userInterface.append(homepage)
+                                 //  userInterface.append(homepage)
                                  
                                   findNewPlace.addEventListener('click',()=>{
                                      findNewPlace.style.display = 'none'

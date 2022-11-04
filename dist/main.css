@@ -720,7 +720,7 @@ p:hover {
 
 .adjust-button-pos {
   position: absolute;
-  margin-left: 45%;
+  margin-left: 42%;
 }
 
 .social-icons {
@@ -790,6 +790,7 @@ p:hover {
   font-size: 17px;
   font-weight: 400;
   font-family: sans-serif;
+  padding: 0;
 }
 
 .refresh-div:hover .show-text {
@@ -798,6 +799,47 @@ p:hover {
 
 .homepage-button {
   position: fixed;
-  top: 23px;
+  top: 24px;
   right: 25%;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.home-text {
+  visibility: hidden;
+  width: 190px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 400;
+  position: absolute;
+  z-index: 100;
+  left: 65%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.home-div .home-text:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  margin-left: -5px;
+  border-width: 5px;
+  transform: rotate(180deg);
+  border-style: solid;
+  border-color: rgb(105, 105, 105) transparent transparent transparent;
+}
+
+.home-div:hover .home-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.home-div:hover .homepage-button {
+  color: white;
 }
