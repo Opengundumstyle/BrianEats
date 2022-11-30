@@ -24,8 +24,7 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
 
 <h2> Wireframes:</h2>
 
- ![wire](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/user-interface.png)
-
+ <img src="https://github.com/Opengundumstyle/aa_javascript_project/blob/main/user-interface.png" width="650px">
 <h2>Implementation Timeline</h2>
 <h3>Day1:</h3>
 research related APIs required for mvps, set up projects
