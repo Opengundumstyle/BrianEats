@@ -31,9 +31,9 @@ research related APIs required for mvps, set up projects
 <h3>Day2:</h3>
 Display static google map on local host. Create utilities like marker class and geolocator..etc  to identiy current user.
 <h3>Day3 - Day4:</h3>
-Architect homepage and create eventlisteners for categories component to handle route rendering between two points with google geolocation service
+Architect homepage and create eventlisteners for categories component to control route rendering between two points with google geolocation service
 <h3>Day5:</h3>
-Implement data fetching functionality utilizing yelp fusion api.
+Implement data fetching functionalities utilizing yelp fusion api. Transfer json response to render restaurants information combining with google map infoWindow
 <h3>Day6:</h3>
 Deploy Heroku pages, double check to ensure correct references and links on Heroku pages.
 <h2>Bonus</h2>
