@@ -11,6 +11,7 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
 ![](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/src/homepage.gif)
 - provide sets of flavor options for users to choose from
 - acurrately pick out one restaurant that matches with user's food requirement
+  <img src="https://github.com/Opengundumstyle/aa_javascript_project/blob/main/src/BrianEatSnapShot.png" width="650px">
 - trace and draw out the closest distance from user to restaurant
 
 <h2>Technologies, Libraries, APIs</h2>
