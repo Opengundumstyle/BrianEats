@@ -11,7 +11,6 @@ basic:
 - provide brief sets of flavors options for users to choose
 - acurrately pick out one restaurant that matches with user's food requirement
 - trace and draw out the closest distance from user to restaurant
-- 
 
 bonus:
 
@@ -20,6 +19,6 @@ bonus:
 
 # Technologies, Libraries, APIs
 google map api
-
+yelp fusion api
 # Wireframes:
 ![wire](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/user-interface.png)
