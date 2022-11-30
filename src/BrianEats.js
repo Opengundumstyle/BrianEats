@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   homediv.appendChild(hometext)
                                   refreshdiv.appendChild(findNewPlace)
                                   homediv.appendChild(homepage)
+
                                  //  userInterface.append(findNewPlace)
 
                                  //  userInterface.append(homepage)
@@ -182,7 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                      getlocation(data,latitude,longitude,categoryName)
                                   })
                                  
-
                                   homepage.addEventListener('click',()=>{
                                     mapDisplay.style.display = "none"
                                     findNewPlace.style.display = 'none'
@@ -205,13 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                       lat:latitude,
                                       lng:longitude,
                                   }
-
-                                 // let directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
-                                 // let lineSymbol = {
-                                 //    path: google.maps.SymbolPath.CIRCLE,
-                                 //    fillOpacity:1,
-                                 //    scale:3
-                                 //   }
              
                                  let bIdx = Math.floor(Math.random() * data.businesses.length);
                                  let business = data.businesses[bIdx]
@@ -288,7 +281,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                       icons[0].offset = (count/markSpeed) + '%';
                                       line.set('icons',icons);
 
-                                      console.log('what is line',line)
                                       let getZoom0 = line.get('map');
                                       console.log('what is getZoom0 here',getZoom0)
                                       let getZoom1 = getZoom0.getZoom();
