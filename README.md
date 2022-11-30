@@ -7,7 +7,8 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
 
 <h2>Functionality & MVPs</h2>
 
-- user interface can be found anywhere by browsing
+- clean and dynamic user interface with brief & easy to read instructions on modal
+![](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/src/homepage.gif)
 - provide brief sets of flavors options for users to choose
 - acurrately pick out one restaurant that matches with user's food requirement
 - trace and draw out the closest distance from user to restaurant
