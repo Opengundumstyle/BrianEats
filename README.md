@@ -5,22 +5,26 @@ needs on where and what they want to eat. But with a minor twist. Instead of giv
 check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite </a>
 
 
-# Functionality & MVPs
+<h2>Functionality & MVPs</h2>
+
 - user interface can be found anywhere by browsing
 - provide brief sets of flavors options for users to choose
 - acurrately pick out one restaurant that matches with user's food requirement
 - trace and draw out the closest distance from user to restaurant
 
-# Technologies, Libraries, APIs
+<h2>Technologies, Libraries, APIs</h2>
+
 - npm
 - webpack
 - express.js
 - google map api
 - yelp fusion api
-# Wireframes:
-![wire](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/user-interface.png)
 
-# Implementation Timeline
+<h2> Wireframes:</h2>
+
+ ![wire](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/user-interface.png)
+
+<h2>Implementation Timeline</h2>
 <h3>Day1:</h3>
 <h3>Day2:</h3>
 <h3>Day3:</h3>
@@ -28,6 +32,7 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
 <h3>Day5:</h3>
 <h3>Day6:</h3>
 
-# Bonus
+<h2>Bonus</h2>
+
 - change routes
 - expand the category from restaurants to anyplaces,for instance(clothes stores,bars,clubs,dispensaries etc.)
