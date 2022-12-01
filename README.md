@@ -30,7 +30,7 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
     return response
 },
 ```
-```json
+```
  const url = `${urlStart}/businesses/search?categories=${searchTerm1}&latitude=${searchTerm2}&longitude=${searchTerm3}
               &radius=10000&limit=20`;
     
