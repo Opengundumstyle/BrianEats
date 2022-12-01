@@ -10,7 +10,41 @@ check out <a href="https://brianeats.herokuapp.com/" target="_blank"> LiveSite <
 - clean and dynamic user interface with brief & easy to read instructions on modal
 ![](https://github.com/Opengundumstyle/aa_javascript_project/blob/main/src/homepage.gif)
 - provide sets of flavor options for users to choose from
-- acurrately pick out one restaurant that matches with user's food requirement
+- fetch restaurant data according to user's current location and pereferences in one food category  
+
+```
+ case 'boba':
+    navigator.geolocation.getCurrentPosition(position => {
+       let latitude,longitude;
+       latitude = position.coords.latitude;  
+       longitude = position.coords.longitude;
+       BusinessLocation.getBoba(latitude,longitude)
+       .then((data)=>getlocation(data,latitude,longitude,event.target.id))
+ })
+    break;
+```
+```
+  getBoba:async function(lat,lng){
+    const response = await apiRequest(`bubbletea, [CA]&${lat}&${lng}`)
+
+    return response
+},
+```
+```
+ const url = `${urlStart}/businesses/search?categories=${searchTerm1}&latitude=${searchTerm2}&longitude=${searchTerm3}
+              &radius=10000&limit=20`;
+    
+ fetch(url,{
+        headers: { 
+                    'Access-Control-Allow-Origin':'*',
+                    'Authorization': "Bearer " + apiKey,
+                    'Content-Type': 'application/json'
+                },
+                method:'GET',
+                credentials:"include",
+    }) 
+```
+  
 - trace and draw out the closest (walking)distance from user to restaurant
   <img src="https://github.com/Opengundumstyle/aa_javascript_project/blob/main/src/BrianEatSnapShot.png" width="650px">
 
